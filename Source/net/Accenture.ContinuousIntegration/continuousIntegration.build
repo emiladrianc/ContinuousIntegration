@@ -10,18 +10,23 @@
 
   <PropertyGroup Label="Configuration">
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>   
+	<RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
   </PropertyGroup>
-
+  
   <PropertyGroup Label="Directories">
     <BuildArtifactsDirectory>.\BuildArtifacts\</BuildArtifactsDirectory>
     <BuildArtifactsBinDirectory>$(BuildArtifactsDirectory)Bin\</BuildArtifactsBinDirectory>
     <BuildArtifactsUnitTestDirectory>$(BuildArtifactsDirectory)UnitTest\</BuildArtifactsUnitTestDirectory>
   </PropertyGroup>
-
+  
   <ItemGroup Label="Solution">
     <SolutionFile Include=".\Accenture.ContinuousIntegration.sln" />
   </ItemGroup>
 
+   <PropertyGroup Label="tools">
+    <NugetExePath>.\Tools\Nuget\nuget.exe</NugetExePath>
+
+  </PropertyGroup>
 
   <Target Name="Clean">
     <Message Importance="high" Text="Start target: Clean" ></Message>
@@ -41,7 +46,21 @@
     <Message Importance="high" Text="Finished target: Init" ></Message>
   </Target>
 
-  <Target Name="Compile" DependsOnTargets="Init">
+  
+  <Target Name="restorePackages" DependsOnTargets="Init">
+    <Message Importance="high" Text="Start target: restorePackages" ></Message>
+
+     <PropertyGroup>
+      <NugetRestorePackagesCommand>$(NugetExePath) restore </NugetRestorePackagesCommand>
+    </PropertyGroup>
+    
+    <Message Importance="high" Text="$(NugetRestorePackagesCommand)"/>
+    <Exec Command="$(NugetRestorePackagesCommand)" />
+    
+    <Message Importance="high" Text="Finished target: restorePackages" ></Message>
+  </Target>
+
+  <Target Name="Compile" DependsOnTargets="restorePackages">
     <Message Importance="high" Text="Start target: Compile" ></Message>
 
     <Message Text="OutputDirectory: $(BuildArtifactsBinDirectory)" ></Message>
