@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+  ToolsVersion="4.0"
+  DefaultTargets="All">
+
+  <UsingTask AssemblyFile=".\Tools\MSBuildAsyncExec\AsyncExec.dll" TaskName="AsyncExec.AsyncExec"/>
+  <UsingTask AssemblyFile=".\Tools\NCover\Build Task Plugins\NCover.MSBuildTasks.dll" TaskName="NCover.MSBuildTasks.NCover" />
+  <UsingTask AssemblyFile=".\Tools\NCover\Build Task Plugins\NCover.MSBuildTasks.dll" TaskName="NCover.MSBuildTasks.NCoverReporting" />
+  <UsingTask AssemblyFile=".\Tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.XmlRead" />
+
+  <PropertyGroup Label="Configuration">
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>   
+  </PropertyGroup>
+
+  <PropertyGroup Label="Directories">
+    <BuildArtifactsDirectory>.\BuildArtifacts\</BuildArtifactsDirectory>
+    <BuildArtifactsBinDirectory>$(BuildArtifactsDirectory)Bin\</BuildArtifactsBinDirectory>
+    <BuildArtifactsUnitTestDirectory>$(BuildArtifactsDirectory)UnitTest\</BuildArtifactsUnitTestDirectory>
+  </PropertyGroup>
+
+  <ItemGroup Label="Solution">
+    <SolutionFile Include=".\Accenture.ContinuousIntegration.sln" />
+  </ItemGroup>
+
+
+  <Target Name="Clean">
+    <Message Importance="high" Text="Start target: Clean" ></Message>
+    <RemoveDir Directories="$(BuildArtifactsDirectory)" ContinueOnError="false" />
+    <Message Importance="low" Text="Directory: $(BuildArtifactsDirectory) removed" />
+    <Message Importance="high" Text="Finished target: Clean" ></Message>
+  </Target>
+
+  <Target Name="Init" DependsOnTargets="Clean">
+    <Message Importance="high" Text="Start target: Init" ></Message>
+
+    <Message Importance="high" Text="Configuration: $(Configuration)"/>
+
+    <MakeDir Directories="$(BuildArtifactsDirectory)" ContinueOnError="false"/>
+    <Message Text="Directory: $(BuildArtifactsDirectory) created." />
+
+    <Message Importance="high" Text="Finished target: Init" ></Message>
+  </Target>
+
+  <Target Name="Compile" DependsOnTargets="Init">
+    <Message Importance="high" Text="Start target: Compile" ></Message>
+
+    <Message Text="OutputDirectory: $(BuildArtifactsBinDirectory)" ></Message>
+    <Message Text="OutputDirectory: $([System.IO.Path]::GetFullPath($(BuildArtifactsBinDirectory)))" ></Message>
+    <MSBuild Projects="@(SolutionFile)" Targets="Rebuild"
+             Properties="OutDir=$([System.IO.Path]::GetFullPath($(BuildArtifactsBinDirectory)));Configuration=$(Configuration);VisualStudioVersion=14.0">
+    </MSBuild>
+    
+    <Message Importance="high" Text="Finished target: Compile" ></Message>
+  </Target>
+
+  <Target Name="NUnitTests" DependsOnTargets="Compile">
+    <Message Importance="high" Text="Start target: NUnitTests."></Message>
+
+  
+
+    <Message Importance="high" Text="Finished target: NUnitTests."></Message>
+  </Target>
+
+ 
+  <Target Name="All" DependsOnTargets="NUnitTests">
+    <Message Importance="high" Text="Start target: All"/>
+
+    <Message Importance="high" Text="Finished target: All"/>
+  </Target>
+
+  <!--c:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe .\ContinuousDelivery.build-->
+
+</Project>
