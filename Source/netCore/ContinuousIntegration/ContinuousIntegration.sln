@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.Business", "Accenture.ContinuousIntegration.Business\Accenture.ContinuousIntegration.Business.csproj", "{E78FD9DD-70CF-4671-9D06-B62B3842F208}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.Business.Tests", "Accenture.ContinuousIntegration.Business.Tests\Accenture.ContinuousIntegration.Business.Tests.csproj", "{C9900328-51C7-4092-B762-1387CC2CA19A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.DAL", "Accenture.ContinuousIntegration.DAL\Accenture.ContinuousIntegration.DAL.csproj", "{5F41D276-65EB-426C-BACC-51E4C59A1CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.DAL.Interfaces", "Accenture.ContinuousIntegration.DAL.Interfaces\Accenture.ContinuousIntegration.DAL.Interfaces.csproj", "{30807DD2-15C8-4349-BE65-8B1A2BE180CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.Common", "Accenture.ContinuousIntegration.Common\Accenture.ContinuousIntegration.Common.csproj", "{3EA7F49F-12D8-41DD-980A-89D34AF0932B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.Logger", "Accenture.ContinuousIntegration.Logger\Accenture.ContinuousIntegration.Logger.csproj", "{177E23E6-8EDD-4306-BF1F-A0EA357C6D92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.WebApi", "Accenture.ContinuousIntegration.WebApi\Accenture.ContinuousIntegration.WebApi.csproj", "{23776C84-C2D9-4CF2-AA8D-718B20BA7AEE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{09756007-903F-41C0-90C0-EDFE10A18EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accenture.ContinuousIntegration.WebApi.Tests", "Accenture.ContinuousIntegration.WebApi.Tests\Accenture.ContinuousIntegration.WebApi.Tests.csproj", "{91C8D342-248B-4966-94B1-C7B95E325850}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E78FD9DD-70CF-4671-9D06-B62B3842F208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E78FD9DD-70CF-4671-9D06-B62B3842F208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E78FD9DD-70CF-4671-9D06-B62B3842F208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E78FD9DD-70CF-4671-9D06-B62B3842F208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9900328-51C7-4092-B762-1387CC2CA19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9900328-51C7-4092-B762-1387CC2CA19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9900328-51C7-4092-B762-1387CC2CA19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9900328-51C7-4092-B762-1387CC2CA19A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F41D276-65EB-426C-BACC-51E4C59A1CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F41D276-65EB-426C-BACC-51E4C59A1CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F41D276-65EB-426C-BACC-51E4C59A1CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F41D276-65EB-426C-BACC-51E4C59A1CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30807DD2-15C8-4349-BE65-8B1A2BE180CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30807DD2-15C8-4349-BE65-8B1A2BE180CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30807DD2-15C8-4349-BE65-8B1A2BE180CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30807DD2-15C8-4349-BE65-8B1A2BE180CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA7F49F-12D8-41DD-980A-89D34AF0932B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA7F49F-12D8-41DD-980A-89D34AF0932B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA7F49F-12D8-41DD-980A-89D34AF0932B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA7F49F-12D8-41DD-980A-89D34AF0932B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177E23E6-8EDD-4306-BF1F-A0EA357C6D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177E23E6-8EDD-4306-BF1F-A0EA357C6D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177E23E6-8EDD-4306-BF1F-A0EA357C6D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177E23E6-8EDD-4306-BF1F-A0EA357C6D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23776C84-C2D9-4CF2-AA8D-718B20BA7AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23776C84-C2D9-4CF2-AA8D-718B20BA7AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23776C84-C2D9-4CF2-AA8D-718B20BA7AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23776C84-C2D9-4CF2-AA8D-718B20BA7AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09756007-903F-41C0-90C0-EDFE10A18EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09756007-903F-41C0-90C0-EDFE10A18EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09756007-903F-41C0-90C0-EDFE10A18EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09756007-903F-41C0-90C0-EDFE10A18EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C8D342-248B-4966-94B1-C7B95E325850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C8D342-248B-4966-94B1-C7B95E325850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C8D342-248B-4966-94B1-C7B95E325850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C8D342-248B-4966-94B1-C7B95E325850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
