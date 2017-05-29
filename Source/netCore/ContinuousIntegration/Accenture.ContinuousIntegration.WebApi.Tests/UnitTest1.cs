@@ -6,8 +6,15 @@ namespace Accenture.ContinuousIntegration.WebApi.Tests
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void TestTrue()
         {
+			Assert.True(true);
         }
-    }
+
+		[Fact]
+		public void TestFalse()
+		{
+			Assert.False(false);
+		}
+	}
 }

@@ -1,8 +1,0 @@
-version: '2'
-
-services:
-  accenture.continuousintegration.webapi:
-    image: accenture.continuousintegration.webapi
-    build:
-      context: ./Accenture.ContinuousIntegration.WebApi
-      dockerfile: Dockerfile
